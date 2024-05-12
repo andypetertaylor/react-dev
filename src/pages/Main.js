@@ -10,18 +10,27 @@ export const Main = () => {
         { field: 'description', headerName: 'Description', width: 130 },
     ];
     return (
-        <div style={{ height: 400, width: '100%' }}>
+        <>
             <DataGrid
-            rows={tasks}
-            columns={columns}
-            initialState={{
-                pagination: {
-                paginationModel: { page: 0, pageSize: 5 },
-                },
-            }}
-            pageSizeOptions={[5, 10]}
-            checkboxSelection
+                rows={tasks}
+                columns={columns}
+                initialState={{
+                    pagination: {
+                        paginationModel: { 
+                            page: 0, 
+                            pageSize: 5 
+                        },
+                    },
+                }}
+                pageSizeOptions={[5, 10]}
+                checkboxSelection
+                sx={{
+                    m: 2,
+                    boxShadow: 4,
+                    width: "50%",
+                    left: "25%"
+                }}
             />
-        </div>
+        </>
     );
 }
