@@ -3,7 +3,10 @@ import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 
 export const Main = () => {
-    const tasks = dbQuery('get', 'task');
+    const tasks = dbQuery({
+        action: 'get', 
+        type: 'task'
+    });
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
         { field: 'title', headerName: 'Title', width: 130 },
